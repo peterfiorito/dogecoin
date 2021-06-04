@@ -27,6 +27,9 @@ class AuxpowMiningTest(BitcoinTestFramework):
   def set_test_params(self):
     self.num_nodes = 2
 
+  def skip_test_if_missing_module (self):
+    self.skip_if_no_wallet ()
+
   def add_options(self, parser):
     parser.add_argument("--segwit", dest="segwit", default=False,
                          action="store_true",
